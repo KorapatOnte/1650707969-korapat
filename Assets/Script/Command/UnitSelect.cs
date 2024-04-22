@@ -9,7 +9,7 @@ public class UnitSelect : MonoBehaviour
     private LayerMask layerMask;
 
     [SerializeField]
-    private List<Unit> curUnits;
+    private List<Unit> curUnits = new List<Unit>();
     public List<Unit> CurUnits { get { return curUnits; } }
 
     [SerializeField]
