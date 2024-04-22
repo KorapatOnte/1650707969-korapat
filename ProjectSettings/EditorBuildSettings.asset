@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 637dc127ca779f142a9f7e7a2ba8ca00
+  - enabled: 1
+    path: Assets/Scenes/ChooseSide.unity
+    guid: e30782a78489fff4b9edf780cc6e7df9
+  - enabled: 1
+    path: Assets/Scenes/ChooseMap.unity
+    guid: 3295addc871a99e4ebb2e5b470e273f3
+  - enabled: 1
+    path: Assets/Scenes/MapScene01.unity
+    guid: e06f1cb4dc5e3a64e93821221197b019
+  m_configObjects: {}

@@ -1,0 +1,123 @@
+using System.Collections;
+using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using UnityEngine;
+
+public class CameraController : MonoBehaviour
+{
+    [SerializeField] private Camera cam;
+    public Camera Cam { get { return cam; } }
+
+    [Header("Move")]
+    [SerializeField] private float moveSpeed = 50;
+
+    [SerializeField] private Transform corner1;
+    public Transform Corner1 {  get { return corner1; } }
+    [SerializeField] private Transform corner2;
+    public Transform Corner2 {  get { return corner2; } }
+
+    [SerializeField] private float xInput;
+    [SerializeField] private float zInput;
+
+    [Header("Zoom")]
+    [SerializeField] private float zoomSpeed = 25;
+    [SerializeField] private float zoomModifier;
+
+    [SerializeField] private float minZoomDist = 15;
+    [SerializeField] private float maxZoomDist = 50;
+
+    [SerializeField] private float dist;
+
+    [Header("Rotate")]
+    [SerializeField] private float rotationAmount;
+    [SerializeField] private Quaternion newRotation;
+
+    public static CameraController instance;
+
+    private void Awake()
+    {
+        instance = this;
+        cam = Camera.main;
+
+        newRotation = transform.rotation;
+        rotationAmount = 1;
+    }
+
+    void Start()
+    {
+
+    }
+
+    void Update()
+    {
+        MoveByKB();
+        Zoom();
+        Rotate();
+    }
+
+    private void MoveByKB()
+    {
+        xInput = Input.GetAxis("Horizontal");
+        zInput = Input.GetAxis("Vertical");
+
+        Vector3 dir = (transform.forward * zInput) + (transform.right * xInput);
+
+        transform.position += dir * moveSpeed * Time.deltaTime;
+        transform.position = Clamp(corner1.position, corner2.position);
+    }
+
+    private Vector3 Clamp(Vector3 lowerLeft, Vector3 topRight)
+    {
+        Vector3 pos = new Vector3(Mathf.Clamp(transform.position.x, lowerLeft.x, topRight.x),
+                                              transform.position.y,
+                                  Mathf.Clamp(transform.position.z, lowerLeft.z, topRight.z));
+        return pos;
+    }
+
+    private void Zoom()
+    {
+        zoomModifier = Input.GetAxis("Mouse ScrollWheel");
+        if(Input.GetKey(KeyCode.Z))
+        {
+            zoomModifier = 0.01f;
+        }
+        if (Input.GetKey(KeyCode.X))
+        {
+            zoomModifier = -0.01f;
+        }
+
+        dist = Vector3.Distance(transform.position, cam.transform.position);
+
+        if(dist < minZoomDist && zoomModifier > 0f)
+        {
+            return; // too close
+        }
+        else if(dist > maxZoomDist && zoomModifier < 0f)
+        {
+            return; // too far
+        }
+
+        cam.transform.position += cam.transform.forward * zoomModifier * zoomSpeed;
+    }
+
+    private void Rotate()
+    {
+        if(Input.GetKey(KeyCode.Q))
+        {
+            newRotation *= Quaternion.Euler(Vector3.up * rotationAmount);
+        }
+
+        if(Input.GetKey(KeyCode.E))
+        {
+            newRotation *= Quaternion.Euler(Vector3.up * -rotationAmount);
+        }
+
+        transform.rotation = Quaternion.Lerp(transform.rotation, newRotation, moveSpeed * Time.deltaTime);
+    }
+
+    public void FocusOnPosition(Vector3 pos)
+    {
+        transform.position = pos;
+    }
+
+}
