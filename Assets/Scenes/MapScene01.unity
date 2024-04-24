@@ -4664,7 +4664,7 @@ PrefabInstance:
     - target: {fileID: 6771865691148043751, guid: ce3f4697c872c7e428051abf6fe5053c, type: 3}
       propertyPath: startPosition
       value: 
-      objectReference: {fileID: 890924903}
+      objectReference: {fileID: 846832727}
     - target: {fileID: 6771865691148043751, guid: ce3f4697c872c7e428051abf6fe5053c, type: 3}
       propertyPath: aliveUnits.Array.size
       value: 0
@@ -4759,7 +4759,7 @@ PrefabInstance:
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 5944966339597718065, guid: ce3f4697c872c7e428051abf6fe5053c, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 890924903}
+      addedObject: {fileID: 846832727}
     - targetCorrespondingSourceObject: {fileID: 4947020474649770087, guid: ce3f4697c872c7e428051abf6fe5053c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 772937735}
@@ -4902,6 +4902,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 758304706}
     - target: {fileID: -2460551522365691034, guid: 8c54e672c76134741a8b286420d06fd0, type: 3}
+      propertyPath: isFunctional
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -2460551522365691034, guid: 8c54e672c76134741a8b286420d06fd0, type: 3}
       propertyPath: unitPrefabs.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -4960,6 +4964,14 @@ PrefabInstance:
     - target: {fileID: 6309074301528361829, guid: 8c54e672c76134741a8b286420d06fd0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7463920737917925404, guid: 8c54e672c76134741a8b286420d06fd0, type: 3}
+      propertyPath: m_Center.x
+      value: 0.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 7572137226356334068, guid: 8c54e672c76134741a8b286420d06fd0, type: 3}
+      propertyPath: m_Extents.z
+      value: 4.95
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5192,6 +5204,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 794494420}
   m_CullTransparentMesh: 1
+--- !u!1 &846832726
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 846832727}
+  m_Layer: 0
+  m_Name: StartPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &846832727
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 846832726}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -926.37, y: -455.8, z: -4708.82}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 758304704}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &859340966
 GameObject:
   m_ObjectHideFlags: 0
@@ -5326,37 +5369,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!1 &890924902
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 890924903}
-  m_Layer: 0
-  m_Name: StartPosition
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &890924903
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 890924902}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -927.42, y: -455.8, z: -4708.82}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 758304704}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0

@@ -5324,10 +5324,12 @@ MonoBehaviour:
   - {fileID: 1294470743195166460, guid: c55a28f77e954a641a8e586275374ff6, type: 3}
   - {fileID: 4609353896220706146, guid: 7fcfcfcd39abbdd4f802e2cf6000def0, type: 3}
   - {fileID: 7315018458455067223, guid: 1f184d5a384cd244dac5c271fa8649b9, type: 3}
+  - {fileID: 4940093361327500889, guid: 42d9ac95527d1af4f9e8d171c69b4198, type: 3}
   ghostBuildingList:
   - {fileID: 1294470743195166460, guid: dbf5afb0a78e1ed4faf292ac693e1ac3, type: 3}
   - {fileID: 4609353896220706146, guid: 1fee94d3cab8fc548a23d60d78c80648, type: 3}
   - {fileID: 7315018458455067223, guid: aaa7478da57be7841925b92d1e9a6e6e, type: 3}
+  - {fileID: 4940093361327500889, guid: 204305f180a576843833266b5342548f, type: 3}
   newBuilding: {fileID: 0}
   ghostBuilding: {fileID: 0}
   inProgressBuilding: {fileID: 0}
